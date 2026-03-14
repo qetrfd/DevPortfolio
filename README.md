@@ -1,59 +1,71 @@
 # DevPortfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+![Angular](https://img.shields.io/badge/Angular-17-red?style=for-the-badge&logo=angular)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=for-the-badge&logo=tailwindcss)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222?style=for-the-badge&logo=github)
+![Status](https://img.shields.io/badge/Status-Active-7C3AED?style=for-the-badge)
 
-## Development server
+Modern developer portfolio built with **Angular and Tailwind CSS**, designed to showcase projects, technical experience, and interactive UI experiments.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🌐 Live Website
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**Portfolio:**  
+https://qetrfd.github.io/DevPortfolio/
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📌 Overview
 
-```bash
-ng generate component component-name
-```
+DevPortfolio is a modern interactive developer portfolio featuring animated UI components, particle effects, and responsive layouts. The project focuses on combining performance, visual design, and clean frontend architecture.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Key goals of the project:
 
-```bash
-ng generate --help
-```
+- Showcase personal software projects  
+- Demonstrate frontend engineering skills  
+- Experiment with interactive UI effects  
+- Provide a clean professional developer presence  
 
-## Building
+---
 
-To build the project run:
+## ✨ Features
 
-```bash
-ng build
-```
+- Interactive particle background  
+- Dynamic UI animations  
+- Scroll reveal effects  
+- 3D tilt project cards  
+- Cursor glow interaction  
+- Responsive design  
+- GitHub Pages deployment  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🛠 Tech Stack
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+**Frontend Framework**
 
-```bash
-ng test
-```
+- Angular
 
-## Running end-to-end tests
+**Styling**
 
-For end-to-end (e2e) testing, run:
+- Tailwind CSS
 
-```bash
-ng e2e
-```
+**Language**
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- TypeScript
 
-## Additional Resources
+**Deployment**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- GitHub Pages
+
+**Other**
+
+- HTML5  
+- CSS3  
+- Canvas API  
+
+---
+
+## 📁 Project Structure
