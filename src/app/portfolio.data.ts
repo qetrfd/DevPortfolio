@@ -10,8 +10,6 @@ export interface Project {
   websiteUrl?: string;
   badge: string[];
   status: string;
-  image: string;
-  imageAlt: string;
   featured: boolean;
   award?: string;
   primaryLanguage: string;
@@ -79,8 +77,6 @@ export const PROJECTS: Project[] = [
     repositoryUrl: 'https://github.com/qetrfd/KIVO',
     badge: ['3rd Place — Mexico City Hackathon'],
     status: 'Inclusive iOS application',
-    image: 'assets/kivo.png',
-    imageAlt: 'KIVO application icon featuring its environmental identity',
     featured: true,
     award: '3rd Place — Mexico City Hackathon',
     primaryLanguage: 'Swift',
@@ -126,8 +122,6 @@ export const PROJECTS: Project[] = [
     repositoryUrl: 'https://github.com/qetrfd/ABLE',
     badge: ['Winning Project — Tecmilenio'],
     status: 'Inclusive iOS application',
-    image: 'assets/able.png',
-    imageAlt: 'ABLE application icon with its accessibility-focused mascot',
     featured: true,
     award: 'Winning Project — Tecmilenio',
     primaryLanguage: 'Swift',
@@ -145,8 +139,6 @@ export const PROJECTS: Project[] = [
     websiteUrl: 'https://qetrfd.github.io/NANU/',
     badge: ['Available on the App Store', 'iOS Application'],
     status: 'Published application',
-    image: 'assets/nanu.png',
-    imageAlt: 'NANU application logo',
     featured: true,
     award: 'Published iOS Application',
     primaryLanguage: 'Swift',
@@ -165,8 +157,6 @@ export const PROJECTS: Project[] = [
     repositoryUrl: 'https://github.com/qetrfd/PipBoyCPP2026',
     badge: ['Work in Progress', 'In Development'],
     status: 'In Development',
-    image: 'assets/pipboy.png',
-    imageAlt: 'PipBoyCPP2026 retro embedded interface',
     featured: true,
     primaryLanguage: 'C++',
   },

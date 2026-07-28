@@ -19,7 +19,9 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Fernando Santillan');
-    expect(compiled.querySelector('h1')?.textContent).toContain('AI, Mobile & Software Developer');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Mechatronics, AI & Mobile Developer',
+    );
   });
 
   it('should render the current featured projects only', async () => {
@@ -44,5 +46,15 @@ describe('App', () => {
     expect(experience?.textContent).toContain('Kuali');
     expect(experience?.textContent).toContain('Private Product');
     expect(experience?.querySelector('a')).toBeNull();
+  });
+
+  it('should provide the CV download and avoid project imagery', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const cvLink = compiled.querySelector<HTMLAnchorElement>('a[download]');
+
+    expect(cvLink?.getAttribute('href')).toBe('assets/Fernando_Santillan_CV.pdf');
+    expect(compiled.querySelector('.project-card img')).toBeNull();
   });
 });

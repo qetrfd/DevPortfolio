@@ -1,6 +1,6 @@
 # Fernando Santillan — Developer Portfolio
 
-Professional portfolio for Fernando Santillan, an AI, Mobile & Software Developer and
+Professional portfolio for Fernando Santillan, a Mechatronics, AI & Mobile Developer and
 Mechatronics Engineering student. The site highlights current public projects, private
 professional experience, achievements and technical skills.
 
