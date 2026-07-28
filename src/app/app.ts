@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnDestroy } from '@angular/core';
 import {
-  ACHIEVEMENTS,
   PROFESSIONAL_EXPERIENCE,
   PROJECTS,
   Project,
@@ -24,7 +23,6 @@ interface Particle {
 export class App implements AfterViewInit, OnDestroy {
   readonly projects = PROJECTS;
   readonly experience = PROFESSIONAL_EXPERIENCE;
-  readonly achievements = ACHIEVEMENTS;
   readonly skillCategories = SKILL_CATEGORIES;
   readonly languageSkills = SKILL_CATEGORIES[0].skills;
   readonly frameworkSkills = [
@@ -47,7 +45,6 @@ export class App implements AfterViewInit, OnDestroy {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Achievements', href: '#achievements' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];

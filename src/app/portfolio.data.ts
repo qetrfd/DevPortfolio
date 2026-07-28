@@ -34,19 +34,6 @@ export interface Experience {
   note: string;
 }
 
-export interface Achievement {
-  title: string;
-  project: string;
-  platform?: string;
-  challenge?: string;
-  team?: string;
-  institution?: string;
-  coverageUrl?: string;
-  marker: string;
-  logo?: string;
-  logoAlt?: string;
-}
-
 export interface SkillCategory {
   title: string;
   description: string;
@@ -239,35 +226,6 @@ export const PROFESSIONAL_EXPERIENCE: Experience = {
   note:
     'Kuali is a private commercial product. Technical implementation details and source code are not publicly available.',
 };
-
-export const ACHIEVEMENTS: Achievement[] = [
-  {
-    title: '3rd Place — Swift Changemakers Hackathon 2026',
-    project: 'KIVO',
-    challenge: 'Waste Challenge',
-    team: 'TrustTheCode',
-    institution: 'Tecmilenio',
-    coverageUrl: 'https://cmlab.org/',
-    marker: '03',
-    logo: 'assets/kivo-logo.png',
-    logoAlt: 'KIVO app logo',
-  },
-  {
-    title: 'Winning Project — Tecmilenio Competition',
-    project: 'ABLE',
-    marker: 'W',
-    logo: 'assets/able-logo.png',
-    logoAlt: 'ABLE app logo',
-  },
-  {
-    title: 'Published iOS Application',
-    project: 'NANU',
-    platform: 'Apple App Store',
-    marker: 'iOS',
-    logo: 'assets/nanu-logo.png',
-    logoAlt: 'NANU app logo',
-  },
-];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {

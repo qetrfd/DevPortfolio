@@ -424,7 +424,6 @@ main,
 .glass-card,
 .experience-card,
 .project-card,
-.achievement-card,
 .stack-card,
 .skill-detail-card,
 .contact-panel {
@@ -842,7 +841,6 @@ main,
 }
 
 .project-logo,
-.achievement-logo,
 .project-modal-logo {
   display: block;
   border: 1px solid rgba(167, 139, 250, 0.28);
@@ -896,6 +894,7 @@ main,
 
 .project-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   align-items: center;
   margin-top: auto;
@@ -920,69 +919,6 @@ main,
 
 .text-button:hover,
 .text-button:focus-visible {
-  color: #fff;
-}
-
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.achievement-card {
-  min-height: 260px;
-  padding: 28px;
-  border-radius: 20px;
-}
-
-.achievement-marker {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid rgba(167, 139, 250, 0.5);
-  border-radius: 14px;
-  color: var(--violet-light);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
-}
-
-.achievement-logo {
-  width: 58px;
-  height: 58px;
-  border-radius: 16px;
-}
-
-.achievement-card h3 {
-  margin-top: 32px;
-  font-size: 20px;
-  line-height: 1.35;
-}
-
-.achievement-card p {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.achievement-card strong {
-  color: var(--muted-light);
-}
-
-.achievement-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 19px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(167, 139, 250, 0.48);
-  color: var(--violet-light);
-  font-size: 11px;
-  font-weight: 750;
-}
-
-.achievement-link:hover,
-.achievement-link:focus-visible {
   color: #fff;
 }
 
@@ -1475,7 +1411,6 @@ main,
 
   .profile-grid,
   .projects-grid,
-  .achievement-grid,
   .primary-skills-grid,
   .skill-detail-grid {
     grid-template-columns: 1fr;

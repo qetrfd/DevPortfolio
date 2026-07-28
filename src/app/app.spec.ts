@@ -95,6 +95,22 @@ describe('App', () => {
     expect(coverageLink?.rel).toBe('noopener noreferrer');
   });
 
+  it('should keep KIVO recognition with the project and omit the achievements section', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const kivoCard = compiled.querySelector('.project-card');
+    const eventLink = kivoCard?.querySelector<HTMLAnchorElement>('.project-event-link');
+
+    expect(kivoCard?.textContent).toContain('3rd Place — Swift Changemakers Hackathon 2026');
+    expect(kivoCard?.textContent).toContain('Waste Challenge · Team TrustTheCode · Tecmilenio');
+    expect(eventLink?.href).toBe('https://cmlab.org/');
+    expect(eventLink?.target).toBe('_blank');
+    expect(eventLink?.rel).toBe('noopener noreferrer');
+    expect(compiled.querySelector('#achievements')).toBeNull();
+    expect(compiled.querySelector('a[href="#achievements"]')).toBeNull();
+  });
+
   it('should describe ABLE for people with motor difficulties using concise details', async () => {
     const fixture = TestBed.createComponent(App);
     fixture.componentInstance.selectedProject = fixture.componentInstance.projects[1];

@@ -248,60 +248,17 @@
                 Repository
               </a>
             }
+            @if (project.eventCoverageUrl) {
+              <a
+                class="text-button project-event-link"
+                [href]="project.eventCoverageUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Event Coverage <span aria-hidden="true">↗</span>
+              </a>
+            }
           </div>
-        </article>
-      }
-    </div>
-  </section>
-
-  <section id="achievements" class="section-shell content-section" aria-labelledby="achievements-title">
-    <div class="section-heading">
-      <p class="section-index">04</p>
-      <div>
-        <p class="eyebrow">Achievements</p>
-        <h2 id="achievements-title">Milestones from products delivered.</h2>
-      </div>
-    </div>
-
-    <div class="achievement-grid">
-      @for (achievement of achievements; track achievement.title) {
-        <article class="achievement-card interactive-card" (mousemove)="updateCardGlow($event)">
-          @if (achievement.logo) {
-            <img
-              class="achievement-logo"
-              [src]="achievement.logo"
-              [alt]="achievement.logoAlt ?? ''"
-              width="58"
-              height="58"
-              loading="lazy"
-            />
-          } @else {
-            <span class="achievement-marker">{{ achievement.marker }}</span>
-          }
-          <h3>{{ achievement.title }}</h3>
-          @if (achievement.challenge) {
-            <p>Challenge: <strong>{{ achievement.challenge }}</strong></p>
-          }
-          <p>Project: <strong>{{ achievement.project }}</strong></p>
-          @if (achievement.team) {
-            <p>Team: <strong>{{ achievement.team }}</strong></p>
-          }
-          @if (achievement.institution) {
-            <p>Institution: <strong>{{ achievement.institution }}</strong></p>
-          }
-          @if (achievement.platform) {
-            <p>Platform: <strong>{{ achievement.platform }}</strong></p>
-          }
-          @if (achievement.coverageUrl) {
-            <a
-              class="achievement-link"
-              [href]="achievement.coverageUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View official event coverage <span aria-hidden="true">↗</span>
-            </a>
-          }
         </article>
       }
     </div>
