@@ -1,429 +1,429 @@
-<div id="loader">
-<div class="loader-dot"></div>
-</div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<canvas id="particles"></canvas>
+<div class="page-noise" aria-hidden="true"></div>
+<div class="page-glow page-glow--one" aria-hidden="true"></div>
+<div class="page-glow page-glow--two" aria-hidden="true"></div>
 
-<div class="cursor-glow"></div>
-<div class="cursor-dot"></div>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#home" aria-label="Fernando Santillan, home" (click)="closeMenu()">
+      <span class="brand__mark" aria-hidden="true">FS</span>
+      <span class="brand__text">
+        <strong>Fernando Santillan</strong>
+        <small>AI · Mobile · Software</small>
+      </span>
+    </a>
 
-<div class="grid-background"></div>
+    <button
+      class="menu-button"
+      type="button"
+      [class.is-open]="isMenuOpen"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
 
-<header>
-
-<nav id="navbar" class="fixed top-6 left-1/2 -translate-x-1/2 bg-[#111827]/70 backdrop-blur-lg border border-gray-800 rounded-xl px-6 py-3 flex gap-8 text-sm text-gray-300 z-50 transition-all">
-
-<a href="#home" class="hover:text-violet-400 transition">Home</a>
-<a href="#about" class="hover:text-violet-400 transition">About</a>
-<a href="#featured" class="hover:text-violet-400 transition">Projects</a>
-<a href="#skills" class="hover:text-violet-400 transition">Skills</a>
-<a href="#contact" class="hover:text-violet-400 transition">Contact</a>
-
-</nav>
-
+    <nav
+      id="primary-navigation"
+      class="primary-navigation"
+      [class.is-open]="isMenuOpen"
+      aria-label="Primary navigation"
+    >
+      @for (item of navigation; track item.href) {
+        <a [href]="item.href" (click)="closeMenu()">{{ item.label }}</a>
+      }
+    </nav>
+  </div>
 </header>
 
-<main>
-
-<section id="home" class="min-h-screen flex items-center pt-24 relative overflow-hidden text-white">
-
-<div class="hero-glow"></div>
-
-<div class="max-w-5xl mx-auto px-6 reveal">
-
-<p class="text-sm text-gray-400 mb-4 tracking-widest">
-SOFTWARE • SYSTEMS • ENGINEERING
-</p>
-
-<h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-Fernando Santillán
-</h1>
-
-<p class="text-xl text-gray-400 max-w-xl mb-8">
-Mechatronics engineering student focused on software systems, human-machine interfaces and experimental computing projects.
-</p>
-
-<div class="flex gap-4 flex-wrap">
-
-<a href="#featured" class="px-6 py-3 bg-violet-500 text-white rounded-xl font-semibold transition hover:bg-violet-400 hover:scale-105">
-View Projects
-</a>
-
-<a href="https://github.com/qetrfd" target="_blank" rel="noopener noreferrer"
-class="px-6 py-3 border border-gray-600 rounded-xl transition hover:border-violet-400 hover:text-violet-400">
-GitHub
-</a>
-
-<a href="assets/Fernando_Santillan_CV.pdf" download
-class="flex items-center gap-2 px-6 py-3 border border-violet-500 text-violet-400 rounded-xl transition hover:bg-violet-500 hover:text-white">
-
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-<path d="M12 3v12"/>
-<path d="M7 10l5 5 5-5"/>
-<path d="M5 21h14"/>
-</svg>
-
-Download CV
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="about" class="py-32 px-6 max-w-6xl mx-auto">
-
-<div class="grid lg:grid-cols-2 gap-20 items-start">
-
-<div class="reveal">
-
-<h2 class="text-5xl font-semibold gradient-text mb-8">
-About
-</h2>
-
-<p class="text-gray-400 mb-6 leading-relaxed text-lg">
-Mechatronics engineering student focused on building experimental software systems, intelligent interfaces and tools that improve how humans interact with computers.
-</p>
-
-<p class="text-gray-400 mb-10 leading-relaxed">
-Most of my projects start as small experiments exploring new interaction models such as gesture control, intelligent desktop agents and custom system dashboards.
-</p>
-
-<div class="grid grid-cols-3 gap-6">
-
-<div class="stat-card">
-<p class="stat-number">4+</p>
-<p class="stat-label">Major Projects</p>
-</div>
-
-<div class="stat-card">
-<p class="stat-number">5+</p>
-<p class="stat-label">Languages</p>
-</div>
-
-<div class="stat-card">
-<p class="stat-number">3+</p>
-<p class="stat-label">Systems Built</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="reveal space-y-6">
-
-<div class="info-card tilt-card">
-
-<h3 class="info-title">Profile</h3>
-
-<div class="info-grid">
-
-<div class="info-item">
-<span class="info-label">Location</span>
-<span class="info-value">Monterrey, Mexico</span>
-</div>
-
-<div class="info-item">
-<span class="info-label">Field</span>
-<span class="info-value">Mechatronics Engineering</span>
-</div>
-
-<div class="info-item">
-<span class="info-label">Focus</span>
-<span class="info-value">Software Systems</span>
-</div>
-
-<div class="info-item">
-<span class="info-label">Interest</span>
-<span class="info-value">Human-Machine Interfaces</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="info-card tilt-card">
-
-<h3 class="info-title">Focus Areas</h3>
-
-<div class="focus-grid">
-
-<span class="focus-tag">Human Computer Interaction</span>
-<span class="focus-tag">Experimental Interfaces</span>
-<span class="focus-tag">AI Systems</span>
-<span class="focus-tag">Robotics</span>
-<span class="focus-tag">System Design</span>
-<span class="focus-tag">Automation</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="featured" class="py-32 px-6 max-w-6xl mx-auto">
-
-<div class="grid md:grid-cols-2 gap-14 items-center">
-
-<div class="reveal">
-
-<p class="text-violet-400 text-sm mb-3 tracking-widest">
-FEATURED PROJECT
-</p>
-
-<h2 class="text-5xl font-semibold text-white mb-6">
-GestureOS
-</h2>
-
-<p class="text-gray-400 mb-6 leading-relaxed">
-Touch-free computer control through real-time hand-gesture recognition, intentional pose validation and an extensible command architecture.
-</p>
-
-<div class="flex gap-4 flex-wrap">
-
-<button type="button" class="project-details-button project-details-button--primary"
-(click)="openProject(projects[0])">
-Explore case study
-</button>
-
-<a href="https://github.com/qetrfd/GestureOS" target="_blank" rel="noopener noreferrer"
-class="project-details-button project-details-button--secondary">
-Repository ↗
-</a>
-
-</div>
-
-</div>
-
-<button type="button" class="reveal project-card tilt-card project-visual-button"
-(click)="openProject(projects[0])" aria-label="Open GestureOS project details">
-
-<img src="assets/gestureos.png" alt="GestureOS">
-
-<div class="project-overlay"></div>
-<span class="project-visual-label">View project <span aria-hidden="true">↗</span></span>
-
-</button>
-
-</div>
-
-<div class="grid md:grid-cols-3 gap-8 mt-20 projects-grid">
-
-@for (project of projects.slice(1); track project.name) {
-<article class="mini-project tilt-card bg-[#0f172a] border border-gray-800 rounded-xl overflow-hidden">
-
-<button type="button" class="mini-project-open" (click)="openProject(project)"
-[attr.aria-label]="'Open ' + project.name + ' project details'">
-
-<span class="mini-project-image">
-<img [src]="project.image" [alt]="project.imageAlt">
-<span class="mini-project-view">View details</span>
-</span>
-
-<span class="mini-project-copy">
-<span class="mini-project-eyebrow">{{ project.eyebrow }}</span>
-<span class="mini-project-title">{{ project.name }}</span>
-<span class="mini-project-summary">{{ project.summary }}</span>
-<span class="mini-project-link">Explore project →</span>
-</span>
-
-</button>
-
-</article>
-}
-
-</div>
-
-</section>
-
-<section id="skills" class="py-28 px-6 max-w-5xl mx-auto">
-
-<div class="text-center mb-20 reveal">
-
-<h2 class="text-5xl md:text-6xl font-semibold gradient-text mb-6 relative inline-block">
-Skills
-<span class="section-line"></span>
-</h2>
-
-<p class="text-gray-400 text-lg max-w-xl mx-auto">
-Technologies and tools used across software engineering and intelligent systems.
-</p>
-
-</div>
-
-<div class="grid md:grid-cols-2 gap-12">
-
-<div class="stack-card reveal">
-
-<h3 class="stack-title">Languages</h3>
-
-<div class="tech-grid">
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-<span>Python</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
-<span>C++</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg">
-<span>Swift</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-<span>JavaScript</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
-<span>TypeScript</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="stack-card reveal">
-
-<h3 class="stack-title">Frameworks</h3>
-
-<div class="tech-grid">
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
-<span>Angular</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
-<span>Tailwind</span>
-</div>
-
-<div class="tech">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg">
-<span>SwiftUI</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="py-32 px-6 max-w-5xl mx-auto">
-
-<div class="text-center mb-20 reveal">
-
-<h2 class="text-6xl md:text-7xl font-bold gradient-text mb-10 leading-[1.15] pb-2">
-Let's build something together
-</h2>
-
-</div>
-
-<div class="contact-grid reveal">
-
-<a href="mailto:ferhsantillan@outlook.com" class="contact-card tilt-card">
-<h3 class="contact-title">Email</h3>
-<p class="contact-value">ferhsantillan@outlook.com</p>
-</a>
-
-<a href="tel:+528342474201" class="contact-card tilt-card">
-<h3 class="contact-title">Phone</h3>
-<p class="contact-value">+52 (834) 2474201</p>
-</a>
-
-</div>
-
-</section>
-
+<main id="main-content">
+  <section id="home" class="hero section-shell" aria-labelledby="hero-title">
+    <div class="hero__content">
+      <p class="eyebrow"><span aria-hidden="true"></span> Building inclusive, intelligent software</p>
+      <h1 id="hero-title">
+        Fernando Santillan
+        <span>AI, Mobile &amp; Software Developer</span>
+      </h1>
+      <p class="hero__description">
+        Mechatronics Engineering student focused on artificial intelligence, mobile development and
+        accessible technology. I build complete software products across iOS, Android and the web,
+        combining thoughtful user experiences with cloud services and intelligent systems.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="#projects">View Projects <span aria-hidden="true">↘</span></a>
+        <a class="button button--secondary" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button button--quiet" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <aside class="hero-console" aria-label="Professional focus">
+      <div class="hero-console__top">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Current focus</span>
+        <span class="hero-console__index">01 / PROFILE</span>
+      </div>
+      <div class="hero-console__body">
+        <p class="hero-console__label">Product surfaces</p>
+        <p class="hero-console__value">iOS · Android · Web</p>
+        <div class="hero-console__divider"></div>
+        <p class="hero-console__label">Core interests</p>
+        <ul>
+          <li><span>01</span> Artificial intelligence</li>
+          <li><span>02</span> Accessible technology</li>
+          <li><span>03</span> Cloud-connected products</li>
+          <li><span>04</span> Cross-platform software</li>
+        </ul>
+      </div>
+      <div class="hero-console__footer">
+        <span>Idea</span>
+        <span aria-hidden="true">→</span>
+        <span>Design</span>
+        <span aria-hidden="true">→</span>
+        <span>Build</span>
+        <span aria-hidden="true">→</span>
+        <span>Deploy</span>
+      </div>
+    </aside>
+  </section>
+
+  <section id="about" class="content-section section-shell" aria-labelledby="about-title">
+    <div class="section-heading">
+      <p class="section-number">01</p>
+      <div>
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Technology built around real people.</h2>
+      </div>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-copy">
+        <p>
+          I am a Mechatronics Engineering student passionate about building technology that solves
+          real-world problems. My work combines mobile development, artificial intelligence,
+          accessibility and cloud-based software.
+        </p>
+        <p>
+          I have developed applications for iOS, Android and the web, participated in award-winning
+          hackathon projects and published an application on the Apple App Store. I enjoy working
+          across the full product lifecycle, from the initial idea and interface design to
+          implementation, testing and deployment.
+        </p>
+        <p>
+          My current interests include AI-assisted applications, accessibility-focused products,
+          computer vision, local AI inference, mobile development and scalable cloud services.
+        </p>
+      </div>
+
+      <aside class="principles-card" aria-label="Development approach">
+        <p class="principles-card__label">How I approach product development</p>
+        <ol>
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Understand the problem</strong>
+              <p>Start with people, context and the outcome the product needs to support.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Build the complete flow</strong>
+              <p>Connect interface, application logic, services, testing and deployment.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Design for access</strong>
+              <p>Consider clarity, adaptability and inclusive interaction from the beginning.</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section id="experience" class="content-section section-shell" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <p class="section-number">02</p>
+      <div>
+        <p class="eyebrow">Professional Experience</p>
+        <h2 id="experience-title">Product work across mobile, web and cloud.</h2>
+      </div>
+    </div>
+
+    <article class="experience-card">
+      <div class="experience-card__summary">
+        <span class="private-label">{{ experience.label }}</span>
+        <p class="experience-card__organization">{{ experience.organization }}</p>
+        <h3>{{ experience.role }}</h3>
+        <p>{{ experience.description }}</p>
+      </div>
+
+      <div class="experience-card__details">
+        <div>
+          <p class="detail-label">Selected contributions</p>
+          <ul class="check-list">
+            @for (contribution of experience.contributions; track contribution) {
+              <li>{{ contribution }}</li>
+            }
+          </ul>
+        </div>
+        <div>
+          <p class="detail-label">Technology experience</p>
+          <div class="tag-list">
+            @for (technology of experience.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects" class="content-section section-shell" aria-labelledby="projects-title">
+    <div class="section-heading section-heading--with-copy">
+      <p class="section-number">03</p>
+      <div>
+        <p class="eyebrow">Featured Projects</p>
+        <h2 id="projects-title">Software products with a clear purpose.</h2>
+      </div>
+      <p>
+        A focused selection of public work across inclusive mobile applications, AI-assisted
+        experiences and embedded software.
+      </p>
+    </div>
+
+    <div class="projects-list">
+      @for (project of projects; track project.title; let index = $index) {
+        <article class="project-card">
+          <div class="project-card__media">
+            <img [src]="project.image" [alt]="project.imageAlt" loading="lazy" />
+            <div class="project-card__media-shade" aria-hidden="true"></div>
+            <p class="project-card__number">0{{ index + 1 }}</p>
+            <div class="project-card__badges">
+              @for (badge of project.badge; track badge) {
+                <span [class.is-award]="badge === project.award">{{ badge }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="project-card__content">
+            <div class="project-card__meta">
+              <span>{{ project.status }}</span>
+              <span>{{ project.primaryLanguage }}</span>
+            </div>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="tag-list tag-list--project" aria-label="Technologies">
+              @for (technology of project.technologies.slice(0, 6); track technology) {
+                <span>{{ technology }}</span>
+              }
+            </div>
+            <div class="project-card__actions">
+              <button class="text-button" type="button" (click)="openProject(project)">
+                View Project <span aria-hidden="true">↗</span>
+              </button>
+              @if (project.repositoryUrl) {
+                <a
+                  class="text-button text-button--muted"
+                  [href]="project.repositoryUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Repository
+                </a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="achievements" class="content-section section-shell" aria-labelledby="achievements-title">
+    <div class="section-heading">
+      <p class="section-number">04</p>
+      <div>
+        <p class="eyebrow">Achievements</p>
+        <h2 id="achievements-title">Milestones from products delivered.</h2>
+      </div>
+    </div>
+
+    <div class="achievements-grid">
+      @for (achievement of achievements; track achievement.title) {
+        <article class="achievement-card">
+          <p class="achievement-card__marker">{{ achievement.marker }}</p>
+          <div>
+            <h3>{{ achievement.title }}</h3>
+            <p>Project: <strong>{{ achievement.project }}</strong></p>
+            @if (achievement.platform) {
+              <p>Platform: <strong>{{ achievement.platform }}</strong></p>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="skills" class="content-section section-shell" aria-labelledby="skills-title">
+    <div class="section-heading section-heading--with-copy">
+      <p class="section-number">05</p>
+      <div>
+        <p class="eyebrow">Technical Skills</p>
+        <h2 id="skills-title">A practical, cross-platform toolkit.</h2>
+      </div>
+      <p>
+        Technologies used across mobile, web, AI, cloud services and product deployment—without
+        artificial proficiency scores.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      @for (category of skillCategories; track category.title; let index = $index) {
+        <article class="skill-card">
+          <div class="skill-card__header">
+            <span>0{{ index + 1 }}</span>
+            <h3>{{ category.title }}</h3>
+          </div>
+          <p>{{ category.description }}</p>
+          <div class="tag-list">
+            @for (skill of category.skills; track skill) {
+              <span>{{ skill }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section section-shell" aria-labelledby="contact-title">
+    <p class="eyebrow">Contact</p>
+    <h2 id="contact-title">Let’s build software that matters.</h2>
+    <p class="contact-section__copy">
+      I am interested in thoughtful mobile, AI, web and accessibility-focused product work.
+    </p>
+
+    <div class="contact-panel">
+      <div>
+        <p class="detail-label">Email</p>
+        <a [href]="'mailto:' + email">{{ email }}</a>
+      </div>
+      <div class="contact-panel__actions">
+        <button class="button button--primary" type="button" (click)="copyEmail()">
+          {{ emailCopied ? 'Email Copied' : 'Copy Email' }}
+        </button>
+        <a class="button button--secondary" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+          Visit GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="sr-only" aria-live="polite">
+        @if (emailCopied) {
+          Email address copied to clipboard.
+        }
+      </p>
+    </div>
+  </section>
 </main>
 
-<footer class="footer">
-
-<div class="footer-inner">
-
-<p class="footer-stack">
-© 2026 Fernando Santillán • Built with Angular + Tailwind
-</p>
-
-</div>
-
+<footer class="site-footer">
+  <div class="section-shell site-footer__inner">
+    <p>© {{ currentYear }} Fernando Santillan</p>
+    <p>AI, Mobile &amp; Software Developer</p>
+    <a href="#home">Back to top ↑</a>
+  </div>
 </footer>
 
 @if (selectedProject; as project) {
-<div class="project-modal-backdrop" (click)="onModalBackdrop($event)">
+  <div class="project-modal-backdrop" (click)="onModalBackdrop($event)">
+    <section
+      class="project-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-modal-title"
+      aria-describedby="project-modal-description"
+    >
+      <button
+        id="project-modal-close"
+        class="project-modal__close"
+        type="button"
+        aria-label="Close project details"
+        (click)="closeProject()"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
 
-<section class="project-modal" role="dialog" aria-modal="true"
-[attr.aria-labelledby]="'project-modal-title'">
+      <div class="project-modal__media">
+        <img [src]="project.image" [alt]="project.imageAlt" />
+        <div class="project-modal__badges">
+          @for (badge of project.badge; track badge) {
+            <span [class.is-award]="badge === project.award">{{ badge }}</span>
+          }
+        </div>
+      </div>
 
-<button id="project-modal-close" type="button" class="project-modal-close"
-(click)="closeProject()" aria-label="Close project details">
-<span aria-hidden="true">×</span>
-</button>
+      <div class="project-modal__content">
+        <p class="eyebrow">{{ project.status }} · {{ project.primaryLanguage }}</p>
+        <h2 id="project-modal-title">{{ project.title }}</h2>
+        <div id="project-modal-description" class="project-modal__description">
+          @for (paragraph of project.longDescription; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
 
-<div class="project-modal-media">
-<img [src]="project.image" [alt]="project.imageAlt">
-<div class="project-modal-media-shade"></div>
-<p class="project-modal-status"><span></span>{{ project.status }}</p>
-</div>
+        @if (project.features.length) {
+          <div class="project-modal__section">
+            <h3>Key functionality</h3>
+            <ul class="feature-grid">
+              @for (feature of project.features; track feature) {
+                <li>{{ feature }}</li>
+              }
+            </ul>
+          </div>
+        }
 
-<div class="project-modal-content">
+        <div class="project-modal__section">
+          <h3>Verified technology</h3>
+          <div class="tag-list">
+            @for (technology of project.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+        </div>
 
-<p class="project-modal-eyebrow">{{ project.eyebrow }}</p>
-<h2 id="project-modal-title">{{ project.name }}</h2>
-<p class="project-modal-description">{{ project.description }}</p>
+        @if (project.repositoryNote) {
+          <p class="repository-note">{{ project.repositoryNote }}</p>
+        }
 
-<div class="project-modal-columns">
-
-<div>
-<h3>What I built</h3>
-<ul class="project-highlights">
-@for (highlight of project.highlights; track highlight) {
-<li>{{ highlight }}</li>
-}
-</ul>
-</div>
-
-<div>
-<h3>Built with</h3>
-<div class="project-tech-list">
-@for (technology of project.technologies; track technology) {
-<span>{{ technology }}</span>
-}
-</div>
-</div>
-
-</div>
-
-<div class="project-modal-actions">
-@if (project.demoUrl) {
-<a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
-class="project-details-button project-details-button--primary">
-Open live demo ↗
-</a>
-}
-<a [href]="project.repositoryUrl" target="_blank" rel="noopener noreferrer"
-class="project-details-button project-details-button--secondary">
-View repository ↗
-</a>
-</div>
-
-</div>
-
-</section>
-
-</div>
+        <div class="project-modal__actions">
+          @if (project.liveUrl) {
+            <a class="button button--primary" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
+              View Project <span aria-hidden="true">↗</span>
+            </a>
+          }
+          @if (project.appStoreUrl) {
+            <a class="button button--primary" [href]="project.appStoreUrl" target="_blank" rel="noopener noreferrer">
+              App Store <span aria-hidden="true">↗</span>
+            </a>
+          }
+          @if (project.websiteUrl) {
+            <a class="button button--secondary" [href]="project.websiteUrl" target="_blank" rel="noopener noreferrer">
+              Official Website <span aria-hidden="true">↗</span>
+            </a>
+          }
+          @if (project.repositoryUrl) {
+            <a class="button button--secondary" [href]="project.repositoryUrl" target="_blank" rel="noopener noreferrer">
+              View Repository <span aria-hidden="true">↗</span>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+  </div>
 }

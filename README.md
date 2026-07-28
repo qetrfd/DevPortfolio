@@ -1,149 +1,77 @@
-# DevPortfolio
+# Fernando Santillan — Developer Portfolio
 
-![Angular](https://img.shields.io/badge/Angular-17-red?style=for-the-badge\&logo=angular)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=for-the-badge\&logo=tailwindcss)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge\&logo=typescript)
-![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222?style=for-the-badge\&logo=github)
-![Status](https://img.shields.io/badge/Status-Active-7C3AED?style=for-the-badge)
+Professional portfolio for Fernando Santillan, an AI, Mobile & Software Developer and
+Mechatronics Engineering student. The site highlights current public projects, private
+professional experience, achievements and technical skills.
 
-Modern developer portfolio built with **Angular and Tailwind CSS**, designed to showcase projects, technical experience, and interactive UI experiments.
+## Live website
 
----
+[https://qetrfd.github.io/DevPortfolio/](https://qetrfd.github.io/DevPortfolio/)
 
-## Live Website
+## Technology
 
-**Portfolio:**
-https://qetrfd.github.io/DevPortfolio/
+- Angular 21
+- TypeScript
+- Tailwind CSS 3
+- HTML5 and CSS3
+- GitHub Pages
 
----
+The portfolio is a single-page Angular application. Project, experience, achievement and
+skill content is centralized in `src/app/portfolio.data.ts`.
 
-## Overview
-
-DevPortfolio is a modern interactive developer portfolio featuring animated UI components, particle effects, and responsive layouts. The project focuses on combining performance, visual design, and clean frontend architecture.
-
-Key goals of the project:
-
-* Showcase personal software projects
-* Demonstrate frontend engineering skills
-* Experiment with interactive UI effects
-* Provide a clean professional developer presence
-
----
-
-## Features
-
-* Interactive particle background
-* Dynamic UI animations
-* Scroll reveal effects
-* 3D tilt project cards
-* Cursor glow interaction
-* Responsive design
-* GitHub Pages deployment
-
----
-
-## Tech Stack
-
-Frontend Framework
-
-* Angular
-
-Styling
-
-* Tailwind CSS
-
-Language
-
-* TypeScript
-
-Deployment
-
-* GitHub Pages
-
-Other
-
-* HTML5
-* CSS3
-* Canvas API
-
----
-
-## Project Structure
-
-```
-src/
- ├─ app/
- │  ├─ app.html
- │  ├─ app.css
- │  └─ app.ts
- ├─ assets/
- └─ styles.css
-```
-
----
-
-## Local Development
-
-Clone the repository:
-
-```
-git clone https://github.com/qetrfd/DevPortfolio.git
-cd DevPortfolio
-```
+## Local development
 
 Install dependencies:
 
-```
+```bash
 npm install
 ```
 
-Run the development server:
+Start the Angular development server:
 
-```
-ng serve
-```
-
-Open in browser:
-
-```
-http://localhost:4200
+```bash
+npm start
 ```
 
----
+Open [http://localhost:4200](http://localhost:4200). Do not open
+`src/app/app.html` directly with Live Server; it is an Angular template.
 
-## Build
+## Validation
 
-```
-ng build
-```
+Run the automated tests:
 
-Production build:
-
-```
-ng build --configuration production
+```bash
+npm test
 ```
 
----
+Create the standard production build:
 
-## Deployment
-
-This project is deployed using **GitHub Pages**.
-
-Deploy command:
-
-```
-ng build --configuration production --base-href "/DevPortfolio/"
-npx angular-cli-ghpages --dir=dist/dev-portfolio/browser
+```bash
+npm run build
 ```
 
----
+Create the GitHub Pages build with the required `/DevPortfolio/` base path:
 
-## Author
+```bash
+npm run build:github
+```
 
-Fernando Hiram Santillán Rodríguez
+## Deploy to GitHub Pages
 
-Mechatronics Engineering Student
-Tecmilenio University
+The deployment script builds with the correct repository subdirectory and publishes the
+generated browser files to the `gh-pages` branch:
 
-GitHub
-https://github.com/qetrfd
+```bash
+npm run deploy:github
+```
+
+The GitHub repository must have Pages configured to publish from the `gh-pages` branch.
+
+## Content maintenance
+
+Projects support optional repository, live project, App Store and official website links.
+Buttons render only when the corresponding URL exists.
+
+The public NANU repository currently exposes its website experience and official website
+link. Add the verified App Store URL to `appStoreUrl` in `src/app/portfolio.data.ts` when it
+is available.
