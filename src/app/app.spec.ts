@@ -145,4 +145,25 @@ describe('App', () => {
     expect(modal?.textContent).not.toContain('location-based recommendations');
     expect(modal?.textContent).not.toContain('AI-Powered');
   });
+
+  it('should classify HTML and CSS under web development instead of programming languages', () => {
+    const fixture = TestBed.createComponent(App);
+    const app = fixture.componentInstance;
+    const webDevelopment = app.skillCategories.find(
+      (category) => category.title === 'Web Development',
+    );
+
+    expect(app.languageSkills).toEqual([
+      'C++',
+      'Java',
+      'JavaScript',
+      'TypeScript',
+      'Python',
+      'Swift',
+    ]);
+    expect(app.languageSkills).not.toContain('HTML');
+    expect(app.languageSkills).not.toContain('CSS');
+    expect(webDevelopment?.skills).toContain('HTML5');
+    expect(webDevelopment?.skills).toContain('CSS3');
+  });
 });

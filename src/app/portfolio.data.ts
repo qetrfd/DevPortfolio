@@ -230,8 +230,8 @@ export const PROFESSIONAL_EXPERIENCE: Experience = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Languages',
-    description: 'Programming and web languages used across product development.',
-    skills: ['C++', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Swift', 'HTML', 'CSS'],
+    description: 'Programming languages used across product development.',
+    skills: ['C++', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Swift'],
   },
   {
     title: 'Mobile Development',
