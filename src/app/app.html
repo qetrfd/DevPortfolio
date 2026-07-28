@@ -152,8 +152,17 @@
 
     <article class="experience-card interactive-card" (mousemove)="updateCardGlow($event)">
       <div class="experience-card__lead">
+        @if (experience.logo) {
+          <img
+            class="experience-logo"
+            [src]="experience.logo"
+            [alt]="experience.logoAlt ?? ''"
+            width="84"
+            height="84"
+          />
+        }
         <span class="status-badge">{{ experience.label }}</span>
-        <p>{{ experience.organization }}</p>
+        <p class="experience-organization">{{ experience.organization }}</p>
         <h3>{{ experience.role }}</h3>
         <p class="experience-description">{{ experience.description }}</p>
       </div>

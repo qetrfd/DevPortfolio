@@ -49,6 +49,9 @@ describe('App', () => {
     expect(experience?.textContent).toContain(
       'Technical implementation details and source code are not publicly available.',
     );
+    const logo = experience?.querySelector<HTMLImageElement>('.experience-logo');
+    expect(logo?.getAttribute('src')).toBe('assets/kuali-logo.png');
+    expect(logo?.alt).toBe('Kuali logo');
     expect(experience?.querySelector('a')).toBeNull();
   });
 
@@ -78,5 +81,22 @@ describe('App', () => {
     expect(coverageLink?.href).toBe('https://cmlab.org/');
     expect(coverageLink?.target).toBe('_blank');
     expect(coverageLink?.rel).toBe('noopener noreferrer');
+  });
+
+  it('should describe ABLE for people with motor difficulties using concise details', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.selectedProject = fixture.componentInstance.projects[1];
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const modal = compiled.querySelector('.project-modal');
+
+    expect(modal?.textContent).toContain('people with motor difficulties');
+    expect(modal?.textContent).toContain('Eye-tracking-assisted navigation');
+    expect(modal?.textContent).toContain('dedicated volunteer space');
+    expect(modal?.textContent).toContain('promote autonomy');
+    expect(modal?.textContent).not.toContain('neurodivergent');
+    expect(modal?.textContent).not.toContain('Pictogram-based communication');
   });
 });

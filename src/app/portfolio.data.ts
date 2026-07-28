@@ -24,6 +24,8 @@ export interface Experience {
   role: string;
   organization: string;
   label: string;
+  logo?: string;
+  logoAlt?: string;
   description: string;
   contributions: string[];
   technologies: string[];
@@ -98,30 +100,21 @@ export const PROJECTS: Project[] = [
   {
     title: 'ABLE',
     description:
-      'An inclusive mobile platform for autonomy, communication and coordinated support for neurodivergent people.',
+      'An inclusive mobile application that helps people with motor difficulties communicate, organize routines and navigate everyday support more independently.',
     longDescription: [
-      'ABLE is an inclusive mobile application designed to strengthen the autonomy, communication and support of neurodivergent people through accessible and easy-to-use tools.',
-      'The platform brings together pictogram and voice-based communication, routine tracking, access to support networks, microjobs and customizable settings designed to adapt to different user needs.',
-      'ABLE also includes a differentiated experience for volunteers, allowing them to create more detailed profiles, manage support activities, monitor routines and visualize the impact of their assistance.',
-      'As part of its accessibility approach, ABLE incorporates features such as large text, accessible mode, haptic feedback and eye-tracking-assisted navigation, aiming to make interaction more natural, safe and intuitive for each user.',
+      'ABLE is an inclusive mobile application designed for people with motor difficulties. It supports communication, routine organization, access to microjobs and connection with a support network. Eye-tracking-assisted navigation allows users to move through the interface and select controls using their gaze, alongside large text, accessible mode and haptic feedback.',
+      'A dedicated volunteer space helps volunteers provide support, manage assistance routines and review the impact of their actions. ABLE aims to promote autonomy, participation and a more accessible daily life.',
     ],
     features: [
-      'Pictogram-based communication',
-      'Voice-assisted communication',
-      'Routine tracking',
-      'Support networks',
-      'Microjobs',
-      'Personalized accessibility settings',
-      'Dedicated volunteer experience',
-      'Volunteer profile management',
-      'Support activity management',
-      'Routine monitoring',
-      'Volunteer impact visualization',
-      'Large text',
-      'Accessible mode',
-      'Haptic feedback',
+      'Accessible communication',
+      'Routine organization',
+      'Microjobs and support network',
       'Eye-tracking-assisted navigation',
-      'Inclusive and adaptive user experience',
+      'Large text and accessible mode',
+      'Haptic feedback',
+      'Dedicated volunteer support space',
+      'Support routine management',
+      'Volunteer impact overview',
     ],
     technologies: [
       'Swift',
@@ -180,6 +173,8 @@ export const PROFESSIONAL_EXPERIENCE: Experience = {
   role: 'Software Developer',
   organization: 'Kuali',
   label: 'Private Product',
+  logo: 'assets/kuali-logo.png',
+  logoAlt: 'Kuali logo',
   description:
     'Contributed to the development of Kuali, an AI-powered accessibility platform focused on improving communication, learning and digital accessibility through mobile and web technologies. Worked across multiple areas of the product, including frontend development, backend services, AI integration, cloud infrastructure and user experience improvements.',
   contributions: [

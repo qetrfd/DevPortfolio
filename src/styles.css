@@ -738,7 +738,17 @@ main,
   border-radius: 22px;
 }
 
-.experience-card__lead > p:nth-child(2) {
+.experience-logo {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 22px;
+  border-radius: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(139, 92, 246, 0.28));
+}
+
+.experience-organization {
   margin-top: 25px;
   color: var(--violet-light);
   font-size: 13px;
