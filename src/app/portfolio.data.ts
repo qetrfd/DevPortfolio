@@ -174,6 +174,8 @@ export const PROJECTS: Project[] = [
     status: 'In Development',
     featured: true,
     primaryLanguage: 'C++',
+    logo: 'assets/pipboy-logo.png',
+    logoAlt: 'PipBoyCPP2026 project artwork',
   },
 ];
 

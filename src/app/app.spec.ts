@@ -74,11 +74,13 @@ describe('App', () => {
       'assets/kivo-logo.png',
       'assets/able-logo.png',
       'assets/nanu-logo.png',
+      'assets/pipboy-logo.png',
     ]);
     expect(projectLogos.map((logo) => logo.alt)).toEqual([
       'KIVO app logo',
       'ABLE app logo',
       'NANU app logo',
+      'PipBoyCPP2026 project artwork',
     ]);
   });
 
