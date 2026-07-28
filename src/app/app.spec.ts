@@ -50,9 +50,14 @@ describe('App', () => {
       'Technical implementation details and source code are not publicly available.',
     );
     const logo = experience?.querySelector<HTMLImageElement>('.experience-logo');
+    const website = experience?.querySelector<HTMLAnchorElement>('.experience-website');
     expect(logo?.getAttribute('src')).toBe('assets/kuali-logo.png');
     expect(logo?.alt).toBe('Kuali logo');
-    expect(experience?.querySelector('a')).toBeNull();
+    expect(website?.href).toBe('https://kualiedu.com.mx/');
+    expect(website?.target).toBe('_blank');
+    expect(website?.rel).toBe('noopener noreferrer');
+    expect(website?.textContent).toContain('Visit Kuali Website');
+    expect(website?.href).not.toContain('github.com');
   });
 
   it('should provide the CV download and use verified project logos', async () => {
@@ -165,5 +170,19 @@ describe('App', () => {
     expect(app.languageSkills).not.toContain('CSS');
     expect(webDevelopment?.skills).toContain('HTML5');
     expect(webDevelopment?.skills).toContain('CSS3');
+  });
+
+  it('should describe the AI, mobile, cloud and accessibility product focus', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const about = compiled.querySelector('#about');
+
+    expect(about?.textContent).toContain('I focus on building AI-powered mobile applications');
+    expect(about?.textContent).toContain('product engineering');
+    expect(about?.textContent).toContain('performance, usability and accessibility');
+    expect(about?.textContent).not.toContain(
+      'I have developed applications for iOS, Android and the web',
+    );
   });
 });

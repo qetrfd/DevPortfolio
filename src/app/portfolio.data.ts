@@ -28,6 +28,7 @@ export interface Experience {
   label: string;
   logo?: string;
   logoAlt?: string;
+  websiteUrl?: string;
   description: string;
   contributions: string[];
   technologies: string[];
@@ -182,6 +183,7 @@ export const PROFESSIONAL_EXPERIENCE: Experience = {
   label: 'Private Product',
   logo: 'assets/kuali-logo.png',
   logoAlt: 'Kuali logo',
+  websiteUrl: 'https://kualiedu.com.mx',
   description:
     'Contributed to the development of Kuali, an AI-powered accessibility platform focused on improving communication, learning and digital accessibility through mobile and web technologies. Worked across multiple areas of the product, including frontend development, backend services, AI integration, cloud infrastructure and user experience improvements.',
   contributions: [

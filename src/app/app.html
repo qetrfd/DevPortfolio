@@ -104,10 +104,10 @@
           intelligence, accessibility and cloud-based software.
         </p>
         <p>
-          I have developed applications for iOS, Android and the web, participated in
-          award-winning hackathon projects and published an application on the Apple App Store. I
-          enjoy working across the full product lifecycle, from the initial idea and interface
-          design to implementation, testing and deployment.
+          I focus on building AI-powered mobile applications, developing intelligent software
+          solutions and creating accessible digital experiences. My work includes AI integration,
+          cloud services, mobile development and product engineering, taking ideas from concept to
+          deployment while continuously improving performance, usability and accessibility.
         </p>
         <p>
           My current interests include AI-assisted applications, accessibility-focused products,
@@ -165,6 +165,16 @@
         <p class="experience-organization">{{ experience.organization }}</p>
         <h3>{{ experience.role }}</h3>
         <p class="experience-description">{{ experience.description }}</p>
+        @if (experience.websiteUrl) {
+          <a
+            class="experience-website"
+            [href]="experience.websiteUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Kuali Website <span aria-hidden="true">↗</span>
+          </a>
+        }
       </div>
 
       <div>

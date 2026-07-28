@@ -769,6 +769,23 @@ main,
   line-height: 1.75;
 }
 
+.experience-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.52);
+  color: var(--violet-light);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.experience-website:hover,
+.experience-website:focus-visible {
+  color: #fff;
+}
+
 .detail-list {
   display: grid;
   gap: 13px;
