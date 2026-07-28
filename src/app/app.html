@@ -1,0 +1,429 @@
+<div id="loader">
+<div class="loader-dot"></div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<div class="cursor-glow"></div>
+<div class="cursor-dot"></div>
+
+<div class="grid-background"></div>
+
+<header>
+
+<nav id="navbar" class="fixed top-6 left-1/2 -translate-x-1/2 bg-[#111827]/70 backdrop-blur-lg border border-gray-800 rounded-xl px-6 py-3 flex gap-8 text-sm text-gray-300 z-50 transition-all">
+
+<a href="#home" class="hover:text-violet-400 transition">Home</a>
+<a href="#about" class="hover:text-violet-400 transition">About</a>
+<a href="#featured" class="hover:text-violet-400 transition">Projects</a>
+<a href="#skills" class="hover:text-violet-400 transition">Skills</a>
+<a href="#contact" class="hover:text-violet-400 transition">Contact</a>
+
+</nav>
+
+</header>
+
+<main>
+
+<section id="home" class="min-h-screen flex items-center pt-24 relative overflow-hidden text-white">
+
+<div class="hero-glow"></div>
+
+<div class="max-w-5xl mx-auto px-6 reveal">
+
+<p class="text-sm text-gray-400 mb-4 tracking-widest">
+SOFTWARE • SYSTEMS • ENGINEERING
+</p>
+
+<h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+Fernando Santillán
+</h1>
+
+<p class="text-xl text-gray-400 max-w-xl mb-8">
+Mechatronics engineering student focused on software systems, human-machine interfaces and experimental computing projects.
+</p>
+
+<div class="flex gap-4 flex-wrap">
+
+<a href="#featured" class="px-6 py-3 bg-violet-500 text-white rounded-xl font-semibold transition hover:bg-violet-400 hover:scale-105">
+View Projects
+</a>
+
+<a href="https://github.com/qetrfd" target="_blank" rel="noopener noreferrer"
+class="px-6 py-3 border border-gray-600 rounded-xl transition hover:border-violet-400 hover:text-violet-400">
+GitHub
+</a>
+
+<a href="assets/Fernando_Santillan_CV.pdf" download
+class="flex items-center gap-2 px-6 py-3 border border-violet-500 text-violet-400 rounded-xl transition hover:bg-violet-500 hover:text-white">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+<path d="M12 3v12"/>
+<path d="M7 10l5 5 5-5"/>
+<path d="M5 21h14"/>
+</svg>
+
+Download CV
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="py-32 px-6 max-w-6xl mx-auto">
+
+<div class="grid lg:grid-cols-2 gap-20 items-start">
+
+<div class="reveal">
+
+<h2 class="text-5xl font-semibold gradient-text mb-8">
+About
+</h2>
+
+<p class="text-gray-400 mb-6 leading-relaxed text-lg">
+Mechatronics engineering student focused on building experimental software systems, intelligent interfaces and tools that improve how humans interact with computers.
+</p>
+
+<p class="text-gray-400 mb-10 leading-relaxed">
+Most of my projects start as small experiments exploring new interaction models such as gesture control, intelligent desktop agents and custom system dashboards.
+</p>
+
+<div class="grid grid-cols-3 gap-6">
+
+<div class="stat-card">
+<p class="stat-number">4+</p>
+<p class="stat-label">Major Projects</p>
+</div>
+
+<div class="stat-card">
+<p class="stat-number">5+</p>
+<p class="stat-label">Languages</p>
+</div>
+
+<div class="stat-card">
+<p class="stat-number">3+</p>
+<p class="stat-label">Systems Built</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="reveal space-y-6">
+
+<div class="info-card tilt-card">
+
+<h3 class="info-title">Profile</h3>
+
+<div class="info-grid">
+
+<div class="info-item">
+<span class="info-label">Location</span>
+<span class="info-value">Monterrey, Mexico</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Field</span>
+<span class="info-value">Mechatronics Engineering</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Focus</span>
+<span class="info-value">Software Systems</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Interest</span>
+<span class="info-value">Human-Machine Interfaces</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="info-card tilt-card">
+
+<h3 class="info-title">Focus Areas</h3>
+
+<div class="focus-grid">
+
+<span class="focus-tag">Human Computer Interaction</span>
+<span class="focus-tag">Experimental Interfaces</span>
+<span class="focus-tag">AI Systems</span>
+<span class="focus-tag">Robotics</span>
+<span class="focus-tag">System Design</span>
+<span class="focus-tag">Automation</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="featured" class="py-32 px-6 max-w-6xl mx-auto">
+
+<div class="grid md:grid-cols-2 gap-14 items-center">
+
+<div class="reveal">
+
+<p class="text-violet-400 text-sm mb-3 tracking-widest">
+FEATURED PROJECT
+</p>
+
+<h2 class="text-5xl font-semibold text-white mb-6">
+GestureOS
+</h2>
+
+<p class="text-gray-400 mb-6 leading-relaxed">
+Touch-free computer control through real-time hand-gesture recognition, intentional pose validation and an extensible command architecture.
+</p>
+
+<div class="flex gap-4 flex-wrap">
+
+<button type="button" class="project-details-button project-details-button--primary"
+(click)="openProject(projects[0])">
+Explore case study
+</button>
+
+<a href="https://github.com/qetrfd/GestureOS" target="_blank" rel="noopener noreferrer"
+class="project-details-button project-details-button--secondary">
+Repository ↗
+</a>
+
+</div>
+
+</div>
+
+<button type="button" class="reveal project-card tilt-card project-visual-button"
+(click)="openProject(projects[0])" aria-label="Open GestureOS project details">
+
+<img src="assets/gestureos.png" alt="GestureOS">
+
+<div class="project-overlay"></div>
+<span class="project-visual-label">View project <span aria-hidden="true">↗</span></span>
+
+</button>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-8 mt-20 projects-grid">
+
+@for (project of projects.slice(1); track project.name) {
+<article class="mini-project tilt-card bg-[#0f172a] border border-gray-800 rounded-xl overflow-hidden">
+
+<button type="button" class="mini-project-open" (click)="openProject(project)"
+[attr.aria-label]="'Open ' + project.name + ' project details'">
+
+<span class="mini-project-image">
+<img [src]="project.image" [alt]="project.imageAlt">
+<span class="mini-project-view">View details</span>
+</span>
+
+<span class="mini-project-copy">
+<span class="mini-project-eyebrow">{{ project.eyebrow }}</span>
+<span class="mini-project-title">{{ project.name }}</span>
+<span class="mini-project-summary">{{ project.summary }}</span>
+<span class="mini-project-link">Explore project →</span>
+</span>
+
+</button>
+
+</article>
+}
+
+</div>
+
+</section>
+
+<section id="skills" class="py-28 px-6 max-w-5xl mx-auto">
+
+<div class="text-center mb-20 reveal">
+
+<h2 class="text-5xl md:text-6xl font-semibold gradient-text mb-6 relative inline-block">
+Skills
+<span class="section-line"></span>
+</h2>
+
+<p class="text-gray-400 text-lg max-w-xl mx-auto">
+Technologies and tools used across software engineering and intelligent systems.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-12">
+
+<div class="stack-card reveal">
+
+<h3 class="stack-title">Languages</h3>
+
+<div class="tech-grid">
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+<span>Python</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">
+<span>C++</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg">
+<span>Swift</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+<span>JavaScript</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+<span>TypeScript</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="stack-card reveal">
+
+<h3 class="stack-title">Frameworks</h3>
+
+<div class="tech-grid">
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
+<span>Angular</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">
+<span>Tailwind</span>
+</div>
+
+<div class="tech">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg">
+<span>SwiftUI</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="py-32 px-6 max-w-5xl mx-auto">
+
+<div class="text-center mb-20 reveal">
+
+<h2 class="text-6xl md:text-7xl font-bold gradient-text mb-10 leading-[1.15] pb-2">
+Let's build something together
+</h2>
+
+</div>
+
+<div class="contact-grid reveal">
+
+<a href="mailto:ferhsantillan@outlook.com" class="contact-card tilt-card">
+<h3 class="contact-title">Email</h3>
+<p class="contact-value">ferhsantillan@outlook.com</p>
+</a>
+
+<a href="tel:+528342474201" class="contact-card tilt-card">
+<h3 class="contact-title">Phone</h3>
+<p class="contact-value">+52 (834) 2474201</p>
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="footer-inner">
+
+<p class="footer-stack">
+© 2026 Fernando Santillán • Built with Angular + Tailwind
+</p>
+
+</div>
+
+</footer>
+
+@if (selectedProject; as project) {
+<div class="project-modal-backdrop" (click)="onModalBackdrop($event)">
+
+<section class="project-modal" role="dialog" aria-modal="true"
+[attr.aria-labelledby]="'project-modal-title'">
+
+<button id="project-modal-close" type="button" class="project-modal-close"
+(click)="closeProject()" aria-label="Close project details">
+<span aria-hidden="true">×</span>
+</button>
+
+<div class="project-modal-media">
+<img [src]="project.image" [alt]="project.imageAlt">
+<div class="project-modal-media-shade"></div>
+<p class="project-modal-status"><span></span>{{ project.status }}</p>
+</div>
+
+<div class="project-modal-content">
+
+<p class="project-modal-eyebrow">{{ project.eyebrow }}</p>
+<h2 id="project-modal-title">{{ project.name }}</h2>
+<p class="project-modal-description">{{ project.description }}</p>
+
+<div class="project-modal-columns">
+
+<div>
+<h3>What I built</h3>
+<ul class="project-highlights">
+@for (highlight of project.highlights; track highlight) {
+<li>{{ highlight }}</li>
+}
+</ul>
+</div>
+
+<div>
+<h3>Built with</h3>
+<div class="project-tech-list">
+@for (technology of project.technologies; track technology) {
+<span>{{ technology }}</span>
+}
+</div>
+</div>
+
+</div>
+
+<div class="project-modal-actions">
+@if (project.demoUrl) {
+<a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
+class="project-details-button project-details-button--primary">
+Open live demo ↗
+</a>
+}
+<a [href]="project.repositoryUrl" target="_blank" rel="noopener noreferrer"
+class="project-details-button project-details-button--secondary">
+View repository ↗
+</a>
+</div>
+
+</div>
+
+</section>
+
+</div>
+}
