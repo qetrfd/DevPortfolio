@@ -13,6 +13,10 @@ export interface Project {
   featured: boolean;
   award?: string;
   primaryLanguage: string;
+  secondaryLabel?: string;
+  eventCoverageUrl?: string;
+  eventImage?: string;
+  eventImageAlt?: string;
   repositoryNote?: string;
 }
 
@@ -23,12 +27,17 @@ export interface Experience {
   description: string;
   contributions: string[];
   technologies: string[];
+  note: string;
 }
 
 export interface Achievement {
   title: string;
   project: string;
   platform?: string;
+  challenge?: string;
+  team?: string;
+  institution?: string;
+  coverageUrl?: string;
   marker: string;
 }
 
@@ -47,6 +56,7 @@ export const PROJECTS: Project[] = [
       'KIVO is an inclusive application that uses artificial intelligence to help people make better environmental decisions. It allows users to scan objects, waste and logos to identify how they can be reused, recycled or taken to a nearby collection center.',
       'The application includes Milo, a virtual assistant that guides users through voice-based support and accessible instructions. KIVO also provides MapKit-powered routes, weekly, monthly and annual environmental impact tracking, challenges, microjobs, community tools and a rewards system.',
       'KIVO turns small everyday actions into sustainable habits, making recycling simpler, easier to understand and more accessible for everyone.',
+      'KIVO was developed by Team TrustTheCode for the Waste Challenge at the Swift Changemakers Hackathon 2026, where the project earned third place.',
     ],
     features: [
       'AI-powered object, waste and logo scanning',
@@ -75,11 +85,15 @@ export const PROJECTS: Project[] = [
       'AVFoundation',
     ],
     repositoryUrl: 'https://github.com/qetrfd/KIVO',
-    badge: ['3rd Place — Mexico City Hackathon'],
+    badge: ['3rd Place — Swift Changemakers Hackathon 2026'],
     status: 'Inclusive iOS application',
     featured: true,
-    award: '3rd Place — Mexico City Hackathon',
+    award: '3rd Place — Swift Changemakers Hackathon 2026',
     primaryLanguage: 'Swift',
+    secondaryLabel: 'Waste Challenge · Team TrustTheCode · Tecmilenio',
+    eventCoverageUrl: 'https://cmlab.org/',
+    eventImage: 'assets/swift-changemakers-trustthecode-2026.jpg',
+    eventImageAlt: 'Team TrustTheCode at the Swift Changemakers Hackathon 2026',
   },
   {
     title: 'ABLE',
@@ -167,34 +181,58 @@ export const PROFESSIONAL_EXPERIENCE: Experience = {
   organization: 'Kuali',
   label: 'Private Product',
   description:
-    'Contributed to the development of a cross-platform accessibility-focused software product available across mobile and web environments. My work has involved application development, AI-assisted functionality, cloud service integration, accessibility improvements, testing and deployment.',
+    'Contributed to the development of Kuali, an AI-powered accessibility platform focused on improving communication, learning and digital accessibility through mobile and web technologies. Worked across multiple areas of the product, including frontend development, backend services, AI integration, cloud infrastructure and user experience improvements.',
   contributions: [
-    'Developed and maintained features across mobile and web environments.',
-    'Integrated cloud services, authentication and external APIs.',
-    'Worked with AI-assisted functionality and conversational interfaces.',
-    'Improved accessibility-focused interfaces and user experiences.',
+    'Designed and developed the main web platform.',
+    'Designed and implemented the administrative dashboard used to manage platform content and services.',
+    'Developed a significant portion of the Android application.',
+    'Participated in the development of the iOS application.',
+    'Designed and implemented AI-powered features for both web and mobile platforms.',
+    'Integrated conversational AI into the user experience.',
+    'Implemented authentication, cloud services and backend communication.',
+    'Developed REST API integrations.',
+    'Worked with Firebase services for authentication, cloud storage and databases.',
+    'Implemented OCR and document processing workflows.',
+    'Developed features for educational content management.',
     'Participated in testing, debugging, deployment and product maintenance.',
-    'Contributed to Android, iOS and web development workflows.',
+    'Improved accessibility-focused interfaces and user experience.',
+    'Collaborated across frontend, backend and AI development.',
   ],
   technologies: [
     'Java',
     'Swift',
     'JavaScript',
-    'Firebase',
-    'Firestore',
-    'Firebase Authentication',
-    'Cloud Storage',
-    'Cloud Run',
-    'REST APIs',
+    'TypeScript',
+    'HTML',
+    'CSS',
     'Node.js',
-    'AI API integration',
+    'Firebase',
+    'Firebase Authentication',
+    'Cloud Firestore',
+    'Firebase Storage',
+    'Firebase Hosting',
+    'Firebase App Check',
+    'Google Cloud Run',
+    'REST APIs',
+    'JWT Authentication',
+    'OCR',
+    'Computer Vision',
+    'Conversational AI',
+    'AI API Integration',
+    'Prompt Engineering',
   ],
+  note:
+    'Kuali is a private commercial product. Technical implementation details and source code are not publicly available.',
 };
 
 export const ACHIEVEMENTS: Achievement[] = [
   {
-    title: '3rd Place — Mexico City Hackathon',
+    title: '3rd Place — Swift Changemakers Hackathon 2026',
     project: 'KIVO',
+    challenge: 'Waste Challenge',
+    team: 'TrustTheCode',
+    institution: 'Tecmilenio',
+    coverageUrl: 'https://cmlab.org/',
     marker: '03',
   },
   {

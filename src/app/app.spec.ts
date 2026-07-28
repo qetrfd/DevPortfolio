@@ -45,6 +45,10 @@ describe('App', () => {
 
     expect(experience?.textContent).toContain('Kuali');
     expect(experience?.textContent).toContain('Private Product');
+    expect(experience?.textContent).toContain('Designed and developed the main web platform.');
+    expect(experience?.textContent).toContain(
+      'Technical implementation details and source code are not publicly available.',
+    );
     expect(experience?.querySelector('a')).toBeNull();
   });
 
@@ -56,5 +60,23 @@ describe('App', () => {
 
     expect(cvLink?.getAttribute('href')).toBe('assets/Fernando_Santillan_CV.pdf');
     expect(compiled.querySelector('.project-card img')).toBeNull();
+  });
+
+  it('should show the verified KIVO award, team and official coverage', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.selectedProject = fixture.componentInstance.projects[0];
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const eventImage = compiled.querySelector<HTMLImageElement>('.event-evidence img');
+    const coverageLink = compiled.querySelector<HTMLAnchorElement>('.event-evidence a');
+
+    expect(compiled.textContent).toContain('3rd Place — Swift Changemakers Hackathon 2026');
+    expect(compiled.textContent).toContain('Waste Challenge · Team TrustTheCode · Tecmilenio');
+    expect(eventImage?.alt).toBe('Team TrustTheCode at the Swift Changemakers Hackathon 2026');
+    expect(coverageLink?.href).toBe('https://cmlab.org/');
+    expect(coverageLink?.target).toBe('_blank');
+    expect(coverageLink?.rel).toBe('noopener noreferrer');
   });
 });
