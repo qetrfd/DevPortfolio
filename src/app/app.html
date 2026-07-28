@@ -193,8 +193,8 @@
       <p class="eyebrow">Featured Projects</p>
       <h2 id="projects-title" class="gradient-text">Products built with purpose.</h2>
       <p>
-        Inclusive mobile applications, intelligent experiences and embedded interfaces—presented
-        without decorative or generated project imagery.
+        Inclusive mobile applications, intelligent experiences and embedded interfaces presented
+        with their official product branding.
       </p>
     </div>
 
@@ -202,7 +202,18 @@
       @for (project of projects; track project.title; let index = $index) {
         <article class="project-card interactive-card" (mousemove)="updateCardGlow($event)">
           <div class="project-card__top">
-            <span class="project-number">0{{ index + 1 }}</span>
+            @if (project.logo) {
+              <img
+                class="project-logo"
+                [src]="project.logo"
+                [alt]="project.logoAlt ?? ''"
+                width="64"
+                height="64"
+                loading="lazy"
+              />
+            } @else {
+              <span class="project-number">0{{ index + 1 }}</span>
+            }
             <div class="project-badges">
               @for (badge of project.badge; track badge) {
                 <span [class.is-award]="badge === project.award">{{ badge }}</span>
@@ -255,7 +266,18 @@
     <div class="achievement-grid">
       @for (achievement of achievements; track achievement.title) {
         <article class="achievement-card interactive-card" (mousemove)="updateCardGlow($event)">
-          <span class="achievement-marker">{{ achievement.marker }}</span>
+          @if (achievement.logo) {
+            <img
+              class="achievement-logo"
+              [src]="achievement.logo"
+              [alt]="achievement.logoAlt ?? ''"
+              width="58"
+              height="58"
+              loading="lazy"
+            />
+          } @else {
+            <span class="achievement-marker">{{ achievement.marker }}</span>
+          }
           <h3>{{ achievement.title }}</h3>
           @if (achievement.challenge) {
             <p>Challenge: <strong>{{ achievement.challenge }}</strong></p>
@@ -396,6 +418,15 @@
       </button>
 
       <div class="project-modal__header">
+        @if (project.logo) {
+          <img
+            class="project-modal-logo"
+            [src]="project.logo"
+            [alt]="project.logoAlt ?? ''"
+            width="86"
+            height="86"
+          />
+        }
         <div>
           @for (badge of project.badge; track badge) {
             <span class="status-badge" [class.is-award]="badge === project.award">{{ badge }}</span>

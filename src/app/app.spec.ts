@@ -55,14 +55,26 @@ describe('App', () => {
     expect(experience?.querySelector('a')).toBeNull();
   });
 
-  it('should provide the CV download and avoid project imagery', async () => {
+  it('should provide the CV download and use verified project logos', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     const cvLink = compiled.querySelector<HTMLAnchorElement>('a[download]');
+    const projectLogos = [
+      ...compiled.querySelectorAll<HTMLImageElement>('.project-card .project-logo'),
+    ];
 
     expect(cvLink?.getAttribute('href')).toBe('assets/Fernando_Santillan_CV.pdf');
-    expect(compiled.querySelector('.project-card img')).toBeNull();
+    expect(projectLogos.map((logo) => logo.getAttribute('src'))).toEqual([
+      'assets/kivo-logo.png',
+      'assets/able-logo.png',
+      'assets/nanu-logo.png',
+    ]);
+    expect(projectLogos.map((logo) => logo.alt)).toEqual([
+      'KIVO app logo',
+      'ABLE app logo',
+      'NANU app logo',
+    ]);
   });
 
   it('should show the verified KIVO award, team and official coverage', async () => {
@@ -98,5 +110,23 @@ describe('App', () => {
     expect(modal?.textContent).toContain('promote autonomy');
     expect(modal?.textContent).not.toContain('neurodivergent');
     expect(modal?.textContent).not.toContain('Pictogram-based communication');
+  });
+
+  it('should present NANU as the published inclusive learning application documented online', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.selectedProject = fixture.componentInstance.projects[2];
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const modal = compiled.querySelector('.project-modal');
+
+    expect(modal?.textContent).toContain('children and families');
+    expect(modal?.textContent).toContain('Sign-language alphabet practice');
+    expect(modal?.textContent).toContain('Published on the Apple App Store');
+    expect(modal?.textContent).toContain('Accessibility Focused');
+    expect(modal?.textContent).not.toContain('nearby businesses');
+    expect(modal?.textContent).not.toContain('location-based recommendations');
+    expect(modal?.textContent).not.toContain('AI-Powered');
   });
 });

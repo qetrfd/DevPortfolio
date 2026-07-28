@@ -18,6 +18,8 @@ export interface Project {
   eventImage?: string;
   eventImageAlt?: string;
   repositoryNote?: string;
+  logo?: string;
+  logoAlt?: string;
 }
 
 export interface Experience {
@@ -41,6 +43,8 @@ export interface Achievement {
   institution?: string;
   coverageUrl?: string;
   marker: string;
+  logo?: string;
+  logoAlt?: string;
 }
 
 export interface SkillCategory {
@@ -96,6 +100,8 @@ export const PROJECTS: Project[] = [
     eventCoverageUrl: 'https://cmlab.org/',
     eventImage: 'assets/swift-changemakers-trustthecode-2026.jpg',
     eventImageAlt: 'Team TrustTheCode at the Swift Changemakers Hackathon 2026',
+    logo: 'assets/kivo-logo.png',
+    logoAlt: 'KIVO app logo',
   },
   {
     title: 'ABLE',
@@ -132,25 +138,39 @@ export const PROJECTS: Project[] = [
     featured: true,
     award: 'Winning Project — Tecmilenio',
     primaryLanguage: 'Swift',
+    logo: 'assets/able-logo.png',
+    logoAlt: 'ABLE app logo',
   },
   {
     title: 'NANU',
     description:
-      'A published iOS application developed with Swift and released on the Apple App Store.',
+      'A published inclusive iOS application with short, visual and guided learning experiences for children and families.',
     longDescription: [
-      'A published iOS application developed with Swift and released on the Apple App Store. NANU represents experience taking a mobile product beyond development and into a public production release.',
+      'NANU is a published inclusive iOS application designed for children and families to learn at their own pace through short, visual and guided experiences.',
+      'It brings communication, logic, creativity, culture and exploration into one clear and friendly interface. Six focused modules encourage active learning through immediate feedback, short challenges and visible progress.',
+      'Developed for iOS with Swift and released on the Apple App Store, NANU represents experience taking a product from concept and development to a public production release.',
     ],
-    features: [],
-    technologies: ['Swift', 'iOS', 'App Store deployment'],
+    features: [
+      'Short, visual and guided learning modules',
+      'Sign-language alphabet practice with camera-based hand recognition',
+      'Logic, patterns and visual memory challenges',
+      'Interactive 3D cultural exploration',
+      'Digital drawing and creative activities',
+      'Guided number tracing',
+      'Immediate feedback and visible progress',
+    ],
+    technologies: ['Swift', 'iOS', 'Camera-based interaction', '3D content', 'App Store deployment'],
     repositoryUrl: 'https://github.com/qetrfd/NANU',
     websiteUrl: 'https://qetrfd.github.io/NANU/',
-    badge: ['Available on the App Store', 'iOS Application'],
-    status: 'Published application',
+    badge: ['Published on the Apple App Store', 'iOS Application', 'Accessibility Focused'],
+    status: 'Published iOS application',
     featured: true,
     award: 'Published iOS Application',
     primaryLanguage: 'Swift',
     repositoryNote:
-      'The public repository currently contains NANU’s HTML website experience; the App Store URL is not published there.',
+      'The official website documents NANU’s product experience. Its public repository contains the website, while the App Store URL is not published there.',
+    logo: 'assets/nanu-logo.png',
+    logoAlt: 'NANU app logo',
   },
   {
     title: 'PipBoyCPP2026',
@@ -229,17 +249,23 @@ export const ACHIEVEMENTS: Achievement[] = [
     institution: 'Tecmilenio',
     coverageUrl: 'https://cmlab.org/',
     marker: '03',
+    logo: 'assets/kivo-logo.png',
+    logoAlt: 'KIVO app logo',
   },
   {
     title: 'Winning Project — Tecmilenio Competition',
     project: 'ABLE',
     marker: 'W',
+    logo: 'assets/able-logo.png',
+    logoAlt: 'ABLE app logo',
   },
   {
     title: 'Published iOS Application',
     project: 'NANU',
     platform: 'Apple App Store',
     marker: 'iOS',
+    logo: 'assets/nanu-logo.png',
+    logoAlt: 'NANU app logo',
   },
 ];
 

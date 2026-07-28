@@ -841,6 +841,23 @@ main,
   font-size: 10px;
 }
 
+.project-logo,
+.achievement-logo,
+.project-modal-logo {
+  display: block;
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  background: #101625;
+  object-fit: cover;
+  box-shadow: 0 14px 34px rgba(76, 29, 149, 0.22);
+}
+
+.project-logo {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 17px;
+}
+
 .project-badges {
   justify-content: flex-end;
 }
@@ -928,6 +945,12 @@ main,
   color: var(--violet-light);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
+}
+
+.achievement-logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
 }
 
 .achievement-card h3 {
@@ -1180,6 +1203,13 @@ main,
 .project-modal__header {
   padding: 48px 54px 34px;
   border-bottom: 1px solid var(--border);
+}
+
+.project-modal-logo {
+  width: 86px;
+  height: 86px;
+  margin-bottom: 22px;
+  border-radius: 22px;
 }
 
 .project-modal__header > p {
