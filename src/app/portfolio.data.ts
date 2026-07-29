@@ -180,7 +180,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const PROFESSIONAL_EXPERIENCE: Experience = {
-  role: 'Software Developer',
+  role: 'Senior Software Developer',
   organization: 'Kuali',
   label: 'Private Product',
   logo: 'assets/kuali-logo.png',

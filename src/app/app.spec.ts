@@ -45,6 +45,7 @@ describe('App', () => {
 
     expect(experience?.textContent).toContain('Kuali');
     expect(experience?.textContent).toContain('Private Product');
+    expect(experience?.textContent).toContain('Senior Software Developer');
     expect(experience?.textContent).toContain('Designed and developed the main web platform.');
     expect(experience?.textContent).toContain(
       'Technical implementation details and source code are not publicly available.',
