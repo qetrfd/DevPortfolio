@@ -235,7 +235,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Languages',
     description: 'Programming languages used across product development.',
-    skills: ['C++', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Swift'],
+    skills: ['C++', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Swift','PHP', 'Rust'],
   },
   {
     title: 'Mobile Development',
