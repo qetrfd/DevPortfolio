@@ -160,14 +160,26 @@
         </div>
         <p class="eyebrow">{{ experience.label }}</p>
         <p class="experience-description">{{ experience.description }}</p>
-        <div class="tag-list" aria-label="Technology focus">
-          @for (technology of experience.technologies; track technology) {
-            <span>{{ technology }}</span>
-          }
-        </div>
         <a class="experience-website" [href]="experience.websiteUrl" target="_blank" rel="noopener noreferrer">
           Visit Kuali Website <span aria-hidden="true">↗</span>
         </a>
+        <section class="kuali-contributions" aria-labelledby="contributions-title">
+          <h4 id="contributions-title" class="card-kicker">Selected contributions</h4>
+          <ul class="detail-list">
+            @for (contribution of experience.contributions; track contribution) {
+              <li>{{ contribution }}</li>
+            }
+          </ul>
+        </section>
+        <section class="kuali-technologies" aria-labelledby="kuali-technologies-title">
+          <h4 id="kuali-technologies-title" class="card-kicker">Technology experience</h4>
+          <div class="tag-list">
+            @for (technology of experience.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+          <p class="privacy-note">{{ experience.note }}</p>
+        </section>
       </div>
 
       <section class="enactus-highlight" aria-labelledby="enactus-title">
@@ -196,15 +208,7 @@
           <li><span class="card-kicker">03 / Adapt</span><h5>Keep learning in motion</h5><p>Progress and performance guide difficulty adjustments. Persistent learning metadata personalizes future experiences.</p></li>
         </ol>
       </section>
-      <details class="kuali-details">
-        <summary>Explore my technical contributions <span aria-hidden="true">+</span></summary>
-        <ul class="detail-list">
-          @for (contribution of experience.contributions; track contribution) {
-            <li>{{ contribution }}</li>
-          }
-        </ul>
-        <p class="privacy-note">{{ experience.note }}</p>
-      </details>
+
     </article>
   </section>
 

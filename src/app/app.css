@@ -94,9 +94,8 @@
   border-color: #e2c071;
   background: rgba(226, 192, 113, 0.08);
 }
-.qalyedu-section,
-.kuali-details {
-  grid-column: 1 / -1;
+.qalyedu-section {
+  grid-column: 2;
   padding-top: 30px;
   border-top: 1px solid var(--border);
 }
@@ -134,18 +133,9 @@
   line-height: 1.7;
   color: var(--muted);
 }
-.kuali-details summary {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-  color: var(--violet-pale);
-  font-size: 13px;
-  padding-block: 8px;
-}
-.kuali-details[open] summary span {
-  transform: rotate(45deg);
-}
+.kuali-overview { grid-row: span 2; }
+.kuali-contributions, .kuali-technologies { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--border); }
+.qalyedu-section .learning-flow { grid-template-columns: 1fr; }
 @media (min-width: 1021px) and (prefers-reduced-motion: no-preference) {
   .enactus-trophy {
     animation: trophy-float 8s ease-in-out infinite;
@@ -157,6 +147,8 @@
   }
 }
 @media (max-width: 780px) {
+  .kuali-overview { grid-row: auto; }
+  .qalyedu-section { grid-column: 1; }
   .kuali-showcase,
   .learning-flow {
     grid-template-columns: 1fr;

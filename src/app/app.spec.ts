@@ -46,7 +46,7 @@ describe('App', () => {
     expect(experience?.textContent).toContain('Kuali');
     expect(experience?.textContent).toContain('Inclusive AI-powered EdTech');
     expect(experience?.textContent).toContain('Co-Founder & CTO');
-    expect(experience?.textContent).toContain('Designed and developed the main web platform and administrative dashboard.');
+    expect(experience?.textContent).toContain('Designed and developed the main web platform.');
     expect(experience?.textContent).toContain(
       'Technical implementation details and source code are not publicly available.',
     );
