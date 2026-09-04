@@ -236,9 +236,4 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Applied intelligence and personalized learning experiences.',
     skills: ['Generative AI', 'LLM Integration', 'Local AI', 'OCR', 'Adaptive Learning'],
   },
-  {
-    title: 'Engineering',
-    description: 'Bringing software, hardware and intelligent systems together.',
-    skills: ['Robotics', 'Embedded Systems', 'Mechatronics', 'Industrial Automation'],
-  },
 ];

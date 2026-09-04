@@ -43,6 +43,10 @@ export class App implements AfterViewInit, OnDestroy {
   ];
 
   readonly skillIcons: Record<string, string> = {
+    'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+    Rust: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg',
+    Kotlin: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+    'Embedded C': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
     'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
     Java: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
     JavaScript:
