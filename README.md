@@ -75,3 +75,11 @@ Buttons render only when the corresponding URL exists.
 The public NANU repository currently exposes its website experience and official website
 link. Add the verified App Store URL to `appStoreUrl` in `src/app/portfolio.data.ts` when it
 is available.
+
+The two **Download CV** buttons share `cvUrl` in `src/app/app.ts` and use
+`src/assets/Fernando_Santillan_CV_2026.pdf`. Keep the URL relative to the document base
+so downloads work both locally and under `/DevPortfolio/` on GitHub Pages.
+
+Kuali's Enactus trophy is the original transparent PNG at
+`src/assets/enactus-mexico-2026-trophy.png`. Its championship coverage links directly
+to KPMG México; QalyEdu and the Co-Founder & CTO role reflect the supplied profile update.

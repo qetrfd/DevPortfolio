@@ -25,20 +25,13 @@ export class App implements AfterViewInit, OnDestroy {
   readonly experience = PROFESSIONAL_EXPERIENCE;
   readonly skillCategories = SKILL_CATEGORIES;
   readonly languageSkills = SKILL_CATEGORIES[0].skills;
-  readonly frameworkSkills = [
-    'Angular',
-    'Tailwind',
-    'SwiftUI',
-    'UIKit',
-    'Android SDK',
-    'Node.js',
-    'Express.js',
-    'Firebase',
-  ];
-  readonly specializedSkillCategories = SKILL_CATEGORIES.slice(1);
+  readonly primarySkillCategories = SKILL_CATEGORIES.slice(0, 2);
+  readonly specializedSkillCategories = SKILL_CATEGORIES.slice(2);
+  readonly kpmgCoverageUrl =
+    'https://kpmg.com/mx/es/sala-de-prensa/comunicados-de-prensa/2026/08/cp-emprendimiento-de-impacto-con-proposito-e-inteligencia-artificial-kuali-gana-la-competencia-nacional-enactus-2026.html';
   readonly email = 'ferhsantillan@gmail.com';
   readonly githubUrl = 'https://github.com/qetrfd';
-  readonly cvUrl = 'assets/Fernando_Santillan_CV.pdf';
+  readonly cvUrl = 'assets/Fernando_Santillan_CV_2026.pdf';
   readonly currentYear = new Date().getFullYear();
   readonly navigation = [
     { label: 'Home', href: '#home' },
@@ -68,6 +61,8 @@ export class App implements AfterViewInit, OnDestroy {
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
     SwiftUI: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
     UIKit: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+    iOS: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+    Android: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
     'Android SDK':
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
     'Node.js':
@@ -203,6 +198,24 @@ export class App implements AfterViewInit, OnDestroy {
     this.createParticles();
     if (this.prefersReducedMotion) {
       this.drawParticles();
+    }
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  trapModalFocus(keyEvent: Event): void {
+    const event = keyEvent as KeyboardEvent;
+    if (!this.selectedProject || event.key !== 'Tab') return;
+    const controls = document.querySelectorAll<HTMLElement>(
+      '.project-modal button, .project-modal a[href]',
+    );
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
     }
   }
 

@@ -1,0 +1,175 @@
+.kuali-showcase {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px 54px;
+  background:
+    linear-gradient(125deg, rgba(139, 92, 246, 0.09), transparent 55%), var(--surface-soft);
+}
+.kuali-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+.kuali-identity .experience-logo {
+  margin: 0;
+}
+.kuali-identity .experience-organization {
+  margin: 0;
+  font-size: clamp(36px, 4vw, 54px);
+  letter-spacing: -0.045em;
+  color: var(--text);
+}
+.kuali-role {
+  margin-top: 6px;
+  color: var(--violet-light);
+  font-size: 18px;
+  font-weight: 650;
+}
+.kuali-overview .eyebrow {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.kuali-overview .experience-description {
+  font-size: 16px;
+}
+.enactus-highlight {
+  position: relative;
+  padding-left: 34px;
+  border-left: 1px solid rgba(226, 192, 113, 0.24);
+}
+.enactus-highlight > .card-kicker {
+  color: #e2c071;
+}
+.enactus-highlight h4 {
+  margin-top: 14px;
+  font-size: clamp(27px, 3vw, 37px);
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+}
+.enactus-highlight h4 span {
+  display: block;
+  margin-top: 8px;
+  color: #e2c071;
+  font-size: 0.65em;
+  letter-spacing: -0.015em;
+}
+.enactus-trophy {
+  width: min(100%, 290px);
+  height: auto;
+  aspect-ratio: 1122 / 1402;
+  object-fit: contain;
+  margin: 12px auto 20px;
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 24px rgba(226, 192, 113, 0.07));
+}
+.enactus-highlight > p:not(.card-kicker) {
+  color: var(--muted-light);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.enactus-destination {
+  display: grid;
+  gap: 7px;
+  margin: 20px 0;
+}
+.enactus-destination strong {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+.enactus-destination strong span {
+  padding-inline: 12px;
+  color: #e2c071;
+}
+.enactus-destination > span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.enactus-coverage {
+  gap: 8px;
+  border-color: rgba(226, 192, 113, 0.5);
+  color: #f0dba6;
+}
+.enactus-coverage:hover {
+  border-color: #e2c071;
+  background: rgba(226, 192, 113, 0.08);
+}
+.qalyedu-section,
+.kuali-details {
+  grid-column: 1 / -1;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+.qalyedu-section > h4 {
+  max-width: 740px;
+  margin-top: 14px;
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.qalyedu-description {
+  max-width: 780px;
+  margin-top: 20px;
+  color: var(--muted-light);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.learning-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  list-style: none;
+  margin-top: 30px;
+}
+.learning-flow li {
+  padding-left: 18px;
+  border-left: 1px solid rgba(167, 139, 250, 0.42);
+}
+.learning-flow h5 {
+  font-size: 15px;
+  margin: 12px 0;
+}
+.learning-flow p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.kuali-details summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--violet-pale);
+  font-size: 13px;
+  padding-block: 8px;
+}
+.kuali-details[open] summary span {
+  transform: rotate(45deg);
+}
+@media (min-width: 1021px) and (prefers-reduced-motion: no-preference) {
+  .enactus-trophy {
+    animation: trophy-float 8s ease-in-out infinite;
+  }
+}
+@keyframes trophy-float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 780px) {
+  .kuali-showcase,
+  .learning-flow {
+    grid-template-columns: 1fr;
+  }
+  .enactus-highlight {
+    padding: 28px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(226, 192, 113, 0.24);
+  }
+  .kuali-identity {
+    gap: 16px;
+  }
+  .enactus-trophy {
+    width: min(100%, 270px);
+  }
+}

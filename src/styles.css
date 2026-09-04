@@ -1378,6 +1378,7 @@ main,
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
     transform: translateY(-8px);
     transition:
       opacity 0.2s ease,
@@ -1385,6 +1386,7 @@ main,
   }
 
   .site-nav.is-open {
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);

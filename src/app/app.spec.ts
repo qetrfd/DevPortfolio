@@ -44,9 +44,9 @@ describe('App', () => {
     const experience = compiled.querySelector('.experience-card');
 
     expect(experience?.textContent).toContain('Kuali');
-    expect(experience?.textContent).toContain('Private Product');
-    expect(experience?.textContent).toContain('Senior Software Developer');
-    expect(experience?.textContent).toContain('Designed and developed the main web platform.');
+    expect(experience?.textContent).toContain('Inclusive AI-powered EdTech');
+    expect(experience?.textContent).toContain('Co-Founder & CTO');
+    expect(experience?.textContent).toContain('Designed and developed the main web platform and administrative dashboard.');
     expect(experience?.textContent).toContain(
       'Technical implementation details and source code are not publicly available.',
     );
@@ -70,7 +70,7 @@ describe('App', () => {
       ...compiled.querySelectorAll<HTMLImageElement>('.project-card .project-logo'),
     ];
 
-    expect(cvLink?.getAttribute('href')).toBe('assets/Fernando_Santillan_CV.pdf');
+    expect(cvLink?.getAttribute('href')).toBe('assets/Fernando_Santillan_CV_2026.pdf');
     expect(projectLogos.map((logo) => logo.getAttribute('src'))).toEqual([
       'assets/kivo-logo.png',
       'assets/able-logo.png',
@@ -154,25 +154,61 @@ describe('App', () => {
     expect(modal?.textContent).not.toContain('AI-Powered');
   });
 
-  it('should classify HTML and CSS under web development instead of programming languages', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    const webDevelopment = app.skillCategories.find(
-      (category) => category.title === 'Web Development',
-    );
-
-    expect(app.languageSkills).toEqual([
-      'C++',
-      'Java',
-      'JavaScript',
-      'TypeScript',
-      'Python',
-      'Swift',
-    ]);
+  it('should keep programming, web and database skills in their own categories', () => {
+    const app = TestBed.createComponent(App).componentInstance;
+    const skills = (title: string) => app.skillCategories.find(category => category.title === title)?.skills;
+    expect(app.languageSkills).toContain('C#');
+    expect(app.languageSkills).toContain('Rust');
+    expect(app.languageSkills).not.toContain('SQL');
     expect(app.languageSkills).not.toContain('HTML');
     expect(app.languageSkills).not.toContain('CSS');
-    expect(webDevelopment?.skills).toContain('HTML5');
-    expect(webDevelopment?.skills).toContain('CSS3');
+    expect(skills('Cloud & Databases')).toContain('SQL');
+    expect(skills('Web & Mobile')).toEqual(['Angular', 'SwiftUI', 'iOS', 'Android', 'HTML', 'CSS']);
+  });
+
+  it('should link the national championship to official coverage and an accessible trophy', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const section = fixture.nativeElement.querySelector('.enactus-highlight') as HTMLElement;
+    expect(section.textContent).toContain('National Champion');
+    expect(section.textContent).toContain('São Paulo, Brazil');
+    const link = section.querySelector('a')!;
+    expect(new URL(link.href).hostname).toBe('kpmg.com');
+    expect(link.target).toBe('_blank');
+    expect(link.rel).toBe('noopener noreferrer');
+    expect(section.querySelector('img')?.alt).toBe('Enactus Mexico 2026 National Champion trophy won by Kuali');
+  });
+
+  it('should resolve both CV downloads under the GitHub Pages base path', async () => {
+    const base = document.createElement('base');
+    base.href = 'https://qetrfd.github.io/DevPortfolio/';
+    document.head.prepend(base);
+    try {
+      const fixture = TestBed.createComponent(App);
+      await fixture.whenStable();
+      const links = [...fixture.nativeElement.querySelectorAll('a[download]')] as HTMLAnchorElement[];
+      expect(links).toHaveLength(2);
+      for (const link of links) {
+        expect(link.href).toBe('https://qetrfd.github.io/DevPortfolio/assets/Fernando_Santillan_CV_2026.pdf');
+      }
+    } finally {
+      base.remove();
+    }
+  });
+
+  it('should keep keyboard focus inside an open project modal', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.componentInstance.selectedProject = fixture.componentInstance.projects[0];
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const controls = fixture.nativeElement.querySelectorAll('.project-modal button, .project-modal a[href]');
+    const first = controls[0] as HTMLElement;
+    const last = controls[controls.length - 1] as HTMLElement;
+    first.focus();
+    first.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true, cancelable: true }));
+    expect(document.activeElement).toBe(last);
+    last.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true }));
+    expect(document.activeElement).toBe(first);
   });
 
   it('should describe the AI, mobile, cloud and accessibility product focus', async () => {

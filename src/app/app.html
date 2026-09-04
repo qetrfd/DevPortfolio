@@ -48,9 +48,8 @@
         <span>Mechatronics, AI &amp; Mobile Developer</span>
       </h1>
       <p class="hero__description">
-        Mechatronics Engineering student focused on artificial intelligence, mobile development
-        and accessible technology. I build complete products across iOS, Android and the web,
-        combining thoughtful user experiences with cloud services and intelligent systems.
+        Mechatronics Engineering student building intelligent, accessible and human-centered
+        technology across AI, software, mobile development, robotics and embedded systems.
       </p>
 
       <div class="hero__actions">
@@ -146,55 +145,66 @@
       <p class="section-index">02</p>
       <div>
         <p class="eyebrow">Professional Experience</p>
-        <h2 id="experience-title">Cross-platform product development.</h2>
+        <h2 id="experience-title">Inclusive technology. National impact.</h2>
       </div>
     </div>
 
-    <article class="experience-card interactive-card" (mousemove)="updateCardGlow($event)">
-      <div class="experience-card__lead">
-        @if (experience.logo) {
-          <img
-            class="experience-logo"
-            [src]="experience.logo"
-            [alt]="experience.logoAlt ?? ''"
-            width="84"
-            height="84"
-          />
-        }
-        <span class="status-badge">{{ experience.label }}</span>
-        <p class="experience-organization">{{ experience.organization }}</p>
-        <h3>{{ experience.role }}</h3>
+    <article class="experience-card kuali-showcase interactive-card" (mousemove)="updateCardGlow($event)">
+      <div class="kuali-overview">
+        <div class="kuali-identity">
+          <img class="experience-logo" [src]="experience.logo" [alt]="experience.logoAlt ?? ''" width="84" height="84" />
+          <div>
+            <h3 class="experience-organization">{{ experience.organization }}</h3>
+            <p class="kuali-role">{{ experience.role }}</p>
+          </div>
+        </div>
+        <p class="eyebrow">{{ experience.label }}</p>
         <p class="experience-description">{{ experience.description }}</p>
-        @if (experience.websiteUrl) {
-          <a
-            class="experience-website"
-            [href]="experience.websiteUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit Kuali Website <span aria-hidden="true">↗</span>
-          </a>
-        }
+        <div class="tag-list" aria-label="Technology focus">
+          @for (technology of experience.technologies; track technology) {
+            <span>{{ technology }}</span>
+          }
+        </div>
+        <a class="experience-website" [href]="experience.websiteUrl" target="_blank" rel="noopener noreferrer">
+          Visit Kuali Website <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
-      <div>
-        <p class="card-kicker">Selected contributions</p>
+      <section class="enactus-highlight" aria-labelledby="enactus-title">
+        <p class="card-kicker">National Champion · 2026</p>
+        <h4 id="enactus-title">National Champion <span>— Enactus Mexico 2026</span></h4>
+        <img class="enactus-trophy" src="assets/enactus-mexico-2026-trophy.png"
+          alt="Enactus Mexico 2026 National Champion trophy won by Kuali"
+          width="1122" height="1402" loading="lazy" decoding="async" />
+        <p>Kuali won the Enactus Mexico National Competition 2026 and was selected to represent Mexico at the Enactus World Cup 2026 in São Paulo, Brazil.</p>
+        <div class="enactus-destination">
+          <strong>Mexico <span aria-hidden="true">→</span> Brazil</strong>
+          <span>Enactus World Cup 2026 · São Paulo</span>
+        </div>
+        <a class="button button--outline enactus-coverage" [href]="kpmgCoverageUrl" target="_blank" rel="noopener noreferrer">
+          View KPMG Coverage <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="qalyedu-section" aria-labelledby="qalyedu-title">
+        <p class="card-kicker">QalyEdu · Adaptive Learning</p>
+        <h4 id="qalyedu-title">A learning path that evolves with the student.</h4>
+        <p class="qalyedu-description">QalyEdu transforms each student's goal into a personalized learning path, adapting lessons, activities, challenges and difficulty according to their profile, progress and available learning time.</p>
+        <ol class="learning-flow">
+          <li><span class="card-kicker">01 / Understand</span><h5>Start with the student</h5><p>Diagnostic assessment builds an adaptive student profile around their learning goal.</p></li>
+          <li><span class="card-kicker">02 / Personalize</span><h5>Shape the learning path</h5><p>AI-generated learning routes combine interactive educational activities with student-controlled learning time and accessibility support, including VoiceOver.</p></li>
+          <li><span class="card-kicker">03 / Adapt</span><h5>Keep learning in motion</h5><p>Progress and performance guide difficulty adjustments. Persistent learning metadata personalizes future experiences.</p></li>
+        </ol>
+      </section>
+      <details class="kuali-details">
+        <summary>Explore my technical contributions <span aria-hidden="true">+</span></summary>
         <ul class="detail-list">
           @for (contribution of experience.contributions; track contribution) {
             <li>{{ contribution }}</li>
           }
         </ul>
-      </div>
-
-      <div>
-        <p class="card-kicker">Technology experience</p>
-        <div class="tag-list">
-          @for (technology of experience.technologies; track technology) {
-            <span>{{ technology }}</span>
-          }
-        </div>
         <p class="privacy-note">{{ experience.note }}</p>
-      </div>
+      </details>
     </article>
   </section>
 
@@ -277,42 +287,28 @@
   <section id="skills" class="section-shell content-section skills-section" aria-labelledby="skills-title">
     <div class="section-heading section-heading--center">
       <p class="eyebrow">Technical Skills</p>
-      <h2 id="skills-title" class="gradient-text">Languages &amp; frameworks.</h2>
+      <h2 id="skills-title" class="gradient-text">Software, intelligence &amp; engineering.</h2>
       <p>Technologies and tools used across mechatronics, mobile products, AI and cloud systems.</p>
     </div>
 
     <div class="primary-skills-grid">
-      <article class="stack-card interactive-card" (mousemove)="updateCardGlow($event)">
-        <h3>Languages</h3>
-        <div class="technology-grid">
-          @for (skill of languageSkills; track skill) {
-            <div class="technology-item">
-              @if (skillIcons[skill]) {
-                <img [src]="skillIcons[skill]" alt="" width="48" height="48" loading="lazy" />
-              } @else {
-                <span class="technology-monogram">{{ skillInitials(skill) }}</span>
-              }
-              <span>{{ skill }}</span>
-            </div>
-          }
-        </div>
-      </article>
-
-      <article class="stack-card interactive-card" (mousemove)="updateCardGlow($event)">
-        <h3>Frameworks &amp; Platforms</h3>
-        <div class="technology-grid">
-          @for (skill of frameworkSkills; track skill) {
-            <div class="technology-item">
-              @if (skillIcons[skill]) {
-                <img [src]="skillIcons[skill]" alt="" width="48" height="48" loading="lazy" />
-              } @else {
-                <span class="technology-monogram">{{ skillInitials(skill) }}</span>
-              }
-              <span>{{ skill }}</span>
-            </div>
-          }
-        </div>
-      </article>
+      @for (category of primarySkillCategories; track category.title) {
+        <article class="stack-card interactive-card" (mousemove)="updateCardGlow($event)">
+          <h3>{{ category.title }}</h3>
+          <div class="technology-grid">
+            @for (skill of category.skills; track skill) {
+              <div class="technology-item">
+                @if (skillIcons[skill]) {
+                  <img [src]="skillIcons[skill]" alt="" width="48" height="48" loading="lazy" />
+                } @else {
+                  <span class="technology-monogram" aria-hidden="true">{{ skill === 'C#' ? 'C#' : skillInitials(skill) }}</span>
+                }
+                <span>{{ skill }}</span>
+              </div>
+            }
+          </div>
+        </article>
+      }
     </div>
 
     <div class="skill-detail-grid">
